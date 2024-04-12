@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo"create docker group"
+sudo groupadd docker
+
+echo"add user to docker group"
+sudo usermod -aG docker $USER
+
+echo"Log out and log back in so that your group membership is re-evaluated"
+newgrp docker
